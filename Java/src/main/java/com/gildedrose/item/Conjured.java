@@ -1,9 +1,12 @@
 package com.gildedrose.item;
 
-import com.gildedrose.strategy.NormalItemStrategy;
+import com.gildedrose.strategy.ConjuredStrategy;
+import com.gildedrose.strategy.ItemStrategy;
 
 public class Conjured extends Item{
-    public Conjured(String name, int sellIn, int quality) {
+    private final ItemStrategy conjuredItemStrategy;
+    public Conjured(String name, int sellIn, int quality, ConjuredStrategy conjuredItemStrategy) {
         super(name, sellIn, quality);
+        this.conjuredItemStrategy = conjuredItemStrategy;
     }
 }
