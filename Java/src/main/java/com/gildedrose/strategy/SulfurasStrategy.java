@@ -9,7 +9,7 @@ public class SulfurasStrategy implements ItemStrategy {
     }
 
     @Override
-    public void decreaseQuality(Item item) {
+    public void updateQuality(Item item) {
 
     }
 }

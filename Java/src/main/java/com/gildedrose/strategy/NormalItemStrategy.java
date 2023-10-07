@@ -4,13 +4,13 @@ import com.gildedrose.item.Item;
 import com.gildedrose.item.NormalItem;
 
 public class NormalItemStrategy implements ItemStrategy{
-
+    private final int defaultDropRate = 1;
     @Override
-    public void decreaseQuality(Item item) {
+    public void updateQuality(Item item) {
         if (item.sellIn < 0){
-            item.quality -= 2;
+            item.quality -= (defaultDropRate * 2);
             return;
         }
-        item.quality-= 1;
+        item.quality-= defaultDropRate;
     }
 }
