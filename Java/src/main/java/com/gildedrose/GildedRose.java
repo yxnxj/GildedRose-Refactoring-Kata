@@ -15,8 +15,8 @@ class GildedRose {
         for (int i = 0; i < items.length; i++){
             Item item = items[i];
             this.itemStrategy = selectStrategy(item.name);
-            item.quality = updateQuality(this.itemStrategy, item.quality, item.sellIn);
             item.sellIn = updateSellIn(item.sellIn);
+            item.quality = updateQuality(this.itemStrategy, item.quality, item.sellIn);
         }
     }
     private ItemStrategy selectStrategy(String name){
@@ -37,7 +37,7 @@ class GildedRose {
     }
 
     private int updateSellIn(int sellIn){
-        return sellIn - 1;
+        return itemStrategy.updateSellIn(sellIn);
     }
 
 //    public void updateQuality() {
