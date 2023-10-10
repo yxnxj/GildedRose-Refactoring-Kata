@@ -5,23 +5,24 @@ import com.gildedrose.item.Item;
 public class BackPassStrategy implements ItemStrategy{
     private final int defaultPickupRate = 1;
     @Override
-    public void updateQuality(Item item) {
-        if (item.sellIn <= 0){
-            item.quality = 0;
-            return;
+    public int updateQuality(int quality, int sellIn) {
+        if (sellIn <= 0){
+            return 0;
         }
 
-        if(item.sellIn <= 5){
-            item.quality += (defaultPickupRate * 3);
+        if(sellIn <= 5){
+            quality += (defaultPickupRate * 3);
         }
-        else if (item.sellIn <= 10){
-            item.quality += (defaultPickupRate * 2);
+        else if (sellIn <= 10){
+            quality += (defaultPickupRate * 2);
         }else{
-            item.quality += defaultPickupRate;
+            quality += defaultPickupRate;
         }
 
-        if (item.quality > 50){
-            item.quality = 50;
+        if (quality > 50){
+            quality = 50;
         }
+
+        return quality;
     }
 }

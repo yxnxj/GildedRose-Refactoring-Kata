@@ -3,13 +3,9 @@ package com.gildedrose.strategy;
 import com.gildedrose.item.Item;
 
 public class SulfurasStrategy implements ItemStrategy {
-    @Override
-    public void decreaseSellIn(Item item) {
-
-    }
 
     @Override
-    public void updateQuality(Item item) {
-
+    public int updateQuality(int quality, int sellIn) {
+        return quality;
     }
 }
