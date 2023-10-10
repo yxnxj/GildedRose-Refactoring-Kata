@@ -15,7 +15,7 @@ class GildedRoseTest {
         GildedRose app = new GildedRose(items);
 
         //when
-        app.updateQuality();
+        app.update();
 
         //then
         assertNotEquals(0, app.items.length);
@@ -32,7 +32,7 @@ class GildedRoseTest {
         GildedRose app = new GildedRose(items);
 
         //when
-        app.updateQuality();
+        app.update();
 
         //then
         assertNotEquals(0, app.items.length);
@@ -49,7 +49,7 @@ class GildedRoseTest {
         GildedRose app = new GildedRose(items);
 
         //when
-        app.updateQuality();
+        app.update();
 
         //then
         assertNotEquals(0, app.items.length);
@@ -66,7 +66,7 @@ class GildedRoseTest {
         GildedRose app = new GildedRose(items);
 
         //when
-        app.updateQuality();
+        app.update();
 
         //then
         assertNotEquals(0, app.items.length);
@@ -83,7 +83,7 @@ class GildedRoseTest {
         GildedRose app = new GildedRose(items);
 
         //when
-        app.updateQuality();
+        app.update();
 
         //then
         assertNotEquals(0, app.items.length);
@@ -100,7 +100,7 @@ class GildedRoseTest {
         GildedRose app = new GildedRose(items);
 
         //when
-        app.updateQuality();
+        app.update();
 
         //then
         assertEquals(3, app.items.length);
@@ -129,7 +129,7 @@ class GildedRoseTest {
         GildedRose app = new GildedRose(items);
 
         //when
-        app.updateQuality();
+        app.update();
 
         //then
         assertNotEquals(0, app.items.length);
