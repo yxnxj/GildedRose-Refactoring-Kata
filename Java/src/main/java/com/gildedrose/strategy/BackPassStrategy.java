@@ -1,7 +1,5 @@
 package com.gildedrose.strategy;
 
-import com.gildedrose.item.Item;
-
 public class BackPassStrategy implements ItemStrategy{
     private final int defaultPickupRate = 1;
     @Override

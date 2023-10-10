@@ -1,7 +1,5 @@
 package com.gildedrose.strategy;
 
-import com.gildedrose.item.Item;
-
 public interface ItemStrategy {
 
     default int updateSellIn(int sellIn){

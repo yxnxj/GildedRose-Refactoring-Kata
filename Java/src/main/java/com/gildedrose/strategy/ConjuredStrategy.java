@@ -1,7 +1,5 @@
 package com.gildedrose.strategy;
 
-import com.gildedrose.item.Item;
-
 public class ConjuredStrategy implements ItemStrategy{
     private final int defaultDropRate = 2;
     @Override
