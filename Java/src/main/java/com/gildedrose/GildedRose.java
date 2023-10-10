@@ -33,11 +33,17 @@ class GildedRose {
         }
     }
     private int updateQuality(ItemStrategy itemStrategy, int quality, int sellIn){
-        return itemStrategy.updateQuality(quality, sellIn);
+        return checkQualityLimit(itemStrategy.updateQuality(quality, sellIn));
     }
 
     private int updateSellIn(int sellIn){
         return itemStrategy.updateSellIn(sellIn);
+    }
+
+    private int checkQualityLimit(int quality){
+        if (quality > 50)
+            quality = 50;
+        return  quality;
     }
 
 //    public void updateQuality() {

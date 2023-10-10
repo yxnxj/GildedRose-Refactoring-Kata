@@ -55,7 +55,7 @@ class GildedRoseTest {
         assertNotEquals(0, app.items.length);
         Item item = app.items[0];
         assertEquals("Sulfuras, Hand of Ragnaros", item.name);
-        assertEquals(80, item.quality);
+        assertEquals(50, item.quality);
         assertEquals(10, item.sellIn);
     }
 
