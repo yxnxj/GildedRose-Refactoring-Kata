@@ -4,6 +4,7 @@ import com.gildedrose.item.Item;
 import com.gildedrose.strategy.*;
 
 class GildedRose {
+    private final int QUALITY_LIMIT = 50;
     Item[] items;
     ItemStrategy itemStrategy;
 
@@ -41,8 +42,8 @@ class GildedRose {
     }
 
     private int checkQualityLimit(int quality){
-        if (quality > 50)
-            quality = 50;
+        if (quality > QUALITY_LIMIT)
+            quality = QUALITY_LIMIT;
         return  quality;
     }
 
