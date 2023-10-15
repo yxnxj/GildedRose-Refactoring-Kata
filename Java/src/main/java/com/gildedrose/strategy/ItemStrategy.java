@@ -6,5 +6,5 @@ public interface ItemStrategy {
         return sellIn - 1;
     }
 
-    int updateQuality(int quality, int sellIn);
+    int updateQuality(int sellIn, int quality);
 }

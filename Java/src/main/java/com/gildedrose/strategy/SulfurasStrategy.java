@@ -7,7 +7,7 @@ public class SulfurasStrategy implements ItemStrategy {
         return sellIn;
     }
     @Override
-    public int updateQuality(int quality, int sellIn) {
+    public int updateQuality(int sellIn, int quality) {
         return quality;
     }
 }
