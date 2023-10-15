@@ -1,6 +1,8 @@
 package com.gildedrose.item;
 
-public class Item {
+import com.gildedrose.strategy.ItemStrategy;
+
+public abstract class Item {
 
     public String name;
 
@@ -13,6 +15,8 @@ public class Item {
         this.sellIn = sellIn;
         this.quality = quality;
     }
+
+    public abstract void update();
 
    @Override
    public String toString() {

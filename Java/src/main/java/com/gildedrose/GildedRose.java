@@ -6,7 +6,7 @@ import com.gildedrose.strategy.*;
 class GildedRose {
     private final int QUALITY_LIMIT = 50;
     Item[] items;
-    ItemStrategy itemStrategy;
+//    ItemStrategy itemStrategy;
 
     public GildedRose(Item[] items) {
         this.items = items;
@@ -15,37 +15,39 @@ class GildedRose {
     public void update(){
         for (int i = 0; i < items.length; i++){
             Item item = items[i];
-            this.itemStrategy = selectStrategy(item.name);
-            item.sellIn = updateSellIn(item.sellIn);
-            item.quality = updateQuality(this.itemStrategy, item.quality, item.sellIn);
+            item.update();
+            item.quality = checkQualityLimit(item.quality);
         }
-    }
-    private ItemStrategy selectStrategy(String name){
-        if (name.contains("Conjured")){
-            return new ConjuredStrategy();
-        }else if (name.contains("Brie")){
-            return new BrieCheeseStrategy();
-        }else if(name.contains("Backstage passes")){
-            return new BackPassStrategy();
-        }else if (name.contains("Sulfuras")){
-            return new SulfurasStrategy();
-        }else{
-            return new NormalItemStrategy();
-        }
-    }
-    private int updateQuality(ItemStrategy itemStrategy, int quality, int sellIn){
-        return checkQualityLimit(itemStrategy.updateQuality(quality, sellIn));
     }
 
-    private int updateSellIn(int sellIn){
-        return itemStrategy.updateSellIn(sellIn);
-    }
 
     private int checkQualityLimit(int quality){
         if (quality > QUALITY_LIMIT)
             quality = QUALITY_LIMIT;
-        return  quality;
+        return quality;
     }
+
+
+//    private ItemStrategy selectStrategy(String name){
+//        if (name.contains("Conjured")){
+//            return new ConjuredStrategy();
+//        }else if (name.contains("Brie")){
+//            return new BrieCheeseStrategy();
+//        }else if(name.contains("Backstage passes")){
+//            return new BackPassStrategy();
+//        }else if (name.contains("Sulfuras")){
+//            return new SulfurasStrategy();
+//        }else{
+//            return new NormalItemStrategy();
+//        }
+//    }
+//    private int updateQuality(ItemStrategy itemStrategy, int quality, int sellIn){
+//        return checkQualityLimit(itemStrategy.updateQuality(quality, sellIn));
+//    }
+//
+//    private int updateSellIn(int sellIn){
+//        return itemStrategy.updateSellIn(sellIn);
+//    }
 
 //    public void updateQuality() {
 //        for (int i = 0; i < items.length; i++) {
