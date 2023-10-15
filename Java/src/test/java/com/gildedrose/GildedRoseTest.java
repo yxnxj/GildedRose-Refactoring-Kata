@@ -11,7 +11,7 @@ class GildedRoseTest {
     @Test
     void normalItemSpend1Day() {
         //given
-        Item[] items = new Item[] { new Item("normal", 1, 1) };
+        Item[] items = new Item[] { GlidedRoseFactory.create("normal", 1, 1) };
         GildedRose app = new GildedRose(items);
 
         //when
@@ -28,7 +28,7 @@ class GildedRoseTest {
     @Test
     void normalItemAfterSellIn() {
         //given
-        Item[] items = new Item[] { new Item("normal", 0, 2) };
+        Item[] items = new Item[] { GlidedRoseFactory.create("normal", 0, 2) };
         GildedRose app = new GildedRose(items);
 
         //when
@@ -38,14 +38,14 @@ class GildedRoseTest {
         assertNotEquals(0, app.items.length);
         Item item = app.items[0];
         assertEquals("normal", item.name);
-        assertEquals(0, item.quality);
         assertEquals(-1, item.sellIn);
+        assertEquals(0, item.quality);
     }
 
     @Test
     void sulfurasSpend1Day() {
         //given
-        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 10, 80) };
+        Item[] items = new Item[] { GlidedRoseFactory.create("Sulfuras, Hand of Ragnaros", 10, 80) };
         GildedRose app = new GildedRose(items);
 
         //when
@@ -62,7 +62,7 @@ class GildedRoseTest {
     @Test
     void brieSpend1Day() {
         //given
-        Item[] items = new Item[] { new Item("Aged Brie", 1, 20) };
+        Item[] items = new Item[] { GlidedRoseFactory.create("Aged Brie", 1, 20) };
         GildedRose app = new GildedRose(items);
 
         //when
@@ -79,7 +79,7 @@ class GildedRoseTest {
     @Test
     void brieSpendAfterSellIn() {
         //given
-        Item[] items = new Item[] { new Item("Aged Brie", 0, 20) };
+        Item[] items = new Item[] { GlidedRoseFactory.create("Aged Brie", 0, 20) };
         GildedRose app = new GildedRose(items);
 
         //when
@@ -96,7 +96,10 @@ class GildedRoseTest {
     @Test
     void concert1Day() {
         //given
-        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20), new Item("Backstage passes to a TAFKAL80ETC concert", 10, 20), new Item("Backstage passes to a TAFKAL80ETC concert", 5, 20) };
+        Item[] items = new Item[] {
+            GlidedRoseFactory.create("Backstage passes to a TAFKAL80ETC concert", 15, 20),
+            GlidedRoseFactory.create("Backstage passes to a TAFKAL80ETC concert", 10, 20),
+            GlidedRoseFactory.create("Backstage passes to a TAFKAL80ETC concert", 5, 20) };
         GildedRose app = new GildedRose(items);
 
         //when
@@ -125,7 +128,7 @@ class GildedRoseTest {
     @Test
     void concertAfterSellIn() {
         //given
-        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 0, 20)};
+        Item[] items = new Item[] { GlidedRoseFactory.create("Backstage passes to a TAFKAL80ETC concert", 0, 20)};
         GildedRose app = new GildedRose(items);
 
         //when
